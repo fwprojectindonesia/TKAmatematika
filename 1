@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>TKA Matematika Interaktif</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 30px;
+}
+.container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+    color: #1a73e8;
+}
+.soal {
+    margin-bottom: 30px;
+}
+.opsi button {
+    display: block;
+    margin: 5px 0;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    background: #e3eafc;
+    cursor: pointer;
+    text-align: left;
+}
+.opsi button:hover {
+    background: #c6dafc;
+}
+.benar {
+    background: #c8f7c5 !important;
+}
+.salah {
+    background: #f7c5c5 !important;
+}
+.pembahasan {
+    display: none;
+    background: #eef3ff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+</style>
+
+<script>
+function cekJawaban(btn, benar, pembahasanId) {
+    let buttons = btn.parentElement.querySelectorAll("button");
+    buttons.forEach(b => b.disabled = true);
+
+    if (btn.getAttribute("data-jawaban") === benar) {
+        btn.classList.add("benar");
+    } else {
+        btn.classList.add("salah");
+    }
+
+    document.getElementById(pembahasanId).style.display = "block";
+}
+</script>
+
+</head>
+<body>
+
+<div class="container">
+<h1>📘 TKA Matematika (Literasi & Numerasi)</h1>
+
+<!-- SOAL 1 -->
+<div class="soal">
+<p><b>1.</b> Harga beras naik dari Rp10.000 menjadi Rp12.500. Persentase kenaikan adalah...</p>
+<div class="opsi">
+<button onclick="cekJawaban(this,'B','p1')" data-jawaban="A">A. 20%</button>
+<button onclick="cekJawaban(this,'B','p1')" data-jawaban="B">B. 25%</button>
+<button onclick="cekJawaban(this,'B','p1')" data-jawaban="C">C. 30%</button>
+<button onclick="cekJawaban(this,'B','p1')" data-jawaban="D">D. 35%</button>
+<button onclick="cekJawaban(this,'B','p1')" data-jawaban="E">E. 40%</button>
+</div>
+<div id="p1" class="pembahasan">
+Kenaikan = 2.500 → (2500/10000) × 100% = 25%
+</div>
+</div>
+
+<!-- SOAL 2 -->
+<div class="soal">
+<p><b>2.</b> Jumlah pengunjung naik dari 200 ke 260. Persentase kenaikan adalah...</p>
+<div class="opsi">
+<button onclick="cekJawaban(this,'C','p2')" data-jawaban="A">A. 20%</button>
+<button onclick="cekJawaban(this,'C','p2')" data-jawaban="B">B. 25%</button>
+<button onclick="cekJawaban(this,'C','p2')" data-jawaban="C">C. 30%</button>
+<button onclick="cekJawaban(this,'C','p2')" data-jawaban="D">D. 35%</button>
+<button onclick="cekJawaban(this,'C','p2')" data-jawaban="E">E. 40%</button>
+</div>
+<div id="p2" class="pembahasan">
+Kenaikan = 60 → (60/200) × 100% = 30%
+</div>
+</div>
+
+<!-- SOAL 3 -->
+<div class="soal">
+<p><b>3.</b> 60% dari 200 siswa menyukai matematika. Yang tidak menyukai adalah...</p>
+<div class="opsi">
+<button onclick="cekJawaban(this,'D','p3')" data-jawaban="A">A. 60</button>
+<button onclick="cekJawaban(this,'D','p3')" data-jawaban="B">B. 70</button>
+<button onclick="cekJawaban(this,'D','p3')" data-jawaban="C">C. 75</button>
+<button onclick="cekJawaban(this,'D','p3')" data-jawaban="D">D. 80</button>
+<button onclick="cekJawaban(this,'D','p3')" data-jawaban="E">E. 90</button>
+</div>
+<div id="p3" class="pembahasan">
+Tidak suka = 40% × 200 = 80
+</div>
+</div>
+
+<!-- SOAL 4 -->
+<div class="soal">
+<p><b>4.</b> Seorang pekerja menyelesaikan 3/4 pekerjaan dalam 6 jam. Waktu total pekerjaan adalah...</p>
+<div class="opsi">
+<button onclick="cekJawaban(this,'B','p4')" data-jawaban="A">A. 6 jam</button>
+<button onclick="cekJawaban(this,'B','p4')" data-jawaban="B">B. 8 jam</button>
+<button onclick="cekJawaban(this,'B','p4')" data-jawaban="C">C. 9 jam</button>
+<button onclick="cekJawaban(this,'B','p4')" data-jawaban="D">D. 10 jam</button>
+<button onclick="cekJawaban(this,'B','p4')" data-jawaban="E">E. 12 jam</button>
+</div>
+<div id="p4" class="pembahasan">
+1 pekerjaan = 6 ÷ (3/4) = 8 jam
+</div>
+</div>
+
+<!-- SOAL 5 -->
+<div class="soal">
+<p><b>5.</b> Harga Rp100.000 didiskon 10% lalu 20%. Harga akhir adalah...</p>
+<div class="opsi">
+<button onclick="cekJawaban(this,'C','p5')" data-jawaban="A">A. 70.000</button>
+<button onclick="cekJawaban(this,'C','p5')" data-jawaban="B">B. 72.000</button>
+<button onclick="cekJawaban(this,'C','p5')" data-jawaban="C">C. 72.000</button>
+<button onclick="cekJawaban(this,'C','p5')" data-jawaban="D">D. 75.000</button>
+<button onclick="cekJawaban(this,'C','p5')" data-jawaban="E">E. 80.000</button>
+</div>
+<div id="p5" class="pembahasan">
+100.000 → diskon 10% = 90.000 → diskon 20% = 72.000
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
